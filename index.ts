@@ -1,38 +1,16 @@
 function isTextFile(filePath: string): boolean {
   const ext = filePath.split(".").pop()?.toLowerCase();
+  // Simplified list of common text file extensions
   const textExtensions = [
     "ts",
-    "tsx",
     "js",
-    "jsx",
     "json",
     "md",
     "txt",
     "html",
     "css",
-    "xml",
-    "yml",
-    "yaml",
-    "sql",
-    "sh",
-    "bash",
     "py",
-    "rb",
-    "java",
-    "c",
-    "cpp",
-    "h",
-    "hpp",
-    "go",
-    "rs",
-    "php",
-    "swift",
-    "kt",
-    "cs",
-    "gitignore",
-    "env",
-    "config",
-    "lock"
+    "gitignore"
   ];
-  return ext ? textExtensions.includes(ext) : false;
+  return textExtensions.includes(ext || "");
 }
